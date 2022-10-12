@@ -1,12 +1,14 @@
 import sys
 import pygame
 
+import constants as c
+
 
 class Game:
     def __init__(self):
         pygame.init()
 
-        screen = pygame.display.set_mode((800, 600), 0, 32)
+        screen = pygame.display.set_mode((c.SCREEN_WIDTH, c.SCREEN_HEIGHT), 0, 32)
         pygame.display.set_caption('PyGame Pool')
         self.clock = pygame.time.Clock()
 
@@ -17,7 +19,7 @@ class Game:
                     pygame.quit()
                     sys.exit()
 
-            self.clock.tick(60)
+            self.clock.tick(c.FPS)
             pygame.display.update()
 
 
